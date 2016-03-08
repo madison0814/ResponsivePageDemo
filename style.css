@@ -1,0 +1,105 @@
+.header-image{
+    display: block;
+    margin:auto;
+}
+.label-color {
+    color: #a81882;
+}
+
+.zero-margin {
+    margin: 0px;
+}
+
+.label-margin {
+    margin-top: 8px;
+    margin-bottom: 0px;
+}
+
+.margin-p2 {
+    margin-left: 10px;
+}
+.medium-label {
+    font-size: 16px;
+}
+
+
+.dash-line {
+    background-color:#0078ab;
+    width:180px;
+    height:1px;
+    margin: 8px 8px 8px 0px;
+}
+
+.hyperlink {
+    color: #0078ab;
+    font-weight: bold;
+}
+
+.small-label {
+    font-size: 12px;
+}
+
+.center-label {
+    text-align: center;
+}
+#contact-us-label{
+    font-size:18px;
+}
+#contact-us-div {
+    border-radius:10px;
+    background-color:#E0F3FD;
+    width:260px;
+    box-shadow:5px 5px 2px #C8D4EA;
+    font-size:14px;
+    padding:10px;
+}
+#important-phone-label{
+    font-size:16px;
+}
+
+#our-plans-div {
+    width: 210px;
+    height: 355px;
+    border-style:solid;
+    border-radius:5px;
+    border-width:1px;
+    border-color:#0078ab";
+}
+
+#our-plans-header {
+    height:33px;
+    background-color: #0078ab;
+    border-radius:3px;
+    padding:5px;
+    color:#fff;
+    font-size:20px;
+}
+#pcp-upper{
+    border-top-left-radius:15px;
+    border-top-right-radius:15px;
+    background-color:#c2c801;
+    color:black;
+    padding:10px;
+}
+#pcp-address{
+    width:300px;
+}
+#pcp-zipcode{
+    width:115px;
+}
+#select-pcp-btn {
+    background-color:#a81882;
+    width:100%;
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
+    margin:2px;
+    color:#fff;
+    font-size:16px;
+    font-weight:bold;
+    text-align:right;
+    padding-right: 100px;
+}
+
+#current-address {
+    margin-top: 100px;
+}
