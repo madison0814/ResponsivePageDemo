@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="mgApp">
+
+<head>
+    <script src="Libs/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="Libs/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="content/bootstrap.min.css" />
+    <link rel="stylesheet" href="content/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <img class="header-image" src="images/banner.png">
+    </header>
+
+    <div class="container">
+        <div class="col-xs-12 col-md-12 col-lg-12">
+            <div class="col-xs-12 col-md-3 col-lg-3">
+                <img src="images/navigationimage.png">
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6" ng-controller="validationController">
+                <h3 class="label-color">Change your<br> Primary Care Physician(PCP)</h3>
+                <br>
+                <form ng-submit="checkZip()">
+                    <div id="pcp-upper">
+                        <div>
+                            <label class="medium-label"> I want my PCP to be: &nbsp; &nbsp;</label>
+                            <input id="pcp-address" type="text" placeholder="Enter Rita Smith or Main Street Peditrics" ng-model="address"/>
+                        </div>
+                        <div>
+                            <label>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Search within: </label>
+                            <select ng-model="distance">
+                                <option>5 miles</option>
+                                <option>10 miles</option>
+                                <option>15 miles</option>
+                                <option>20 miles</option>
+                            </select> &nbsp; &nbsp;&nbsp; &nbsp;
+                            <label>of Zip Code: </label>
+                            <input type="number" min=0 id="pcp-zipcode" ng-model="zipCode" ng-keypress="preventInvalidInput($event)"/>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="submit" id="select-pcp-btn"  value="Select this PCP &#9658;"/>
+                    </div>
+                </form>
+<!-- modal starts-->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Input Information:</h4>
+                            </div>
+                            <div class="modal-body">
+                                <label>Address:</label>&nbsp;&nbsp;{{address}}
+                                <br>
+                                <label>distance:</label>&nbsp;&nbsp;{{distance}}
+                                <br>
+                                <label>Zip Code: </label>&nbsp;&nbsp;{{zipCode}}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--                modal ends-->
+
+                <div class="alert alert-danger" role="alert" ng-show="!isValid">
+                    <span>Error:</span>
+                    Please Enter valid {{invalidField}}
+                </div>
+
+                <div>
+                    <p class="center-label medium-label"><b class="label-color">Not sure?&nbsp; &nbsp; <a href="#">Use our Find a Doctor Search Tool &#9658;</a></b></p>
+                    <p class="center-label">Then fill out the form above</p>
+                </div>
+            </div>
+
+
+
+            <div id="current-address" class="col-xs-12 col-md-3 col-lg-3">
+                <p class="label-color"><b>Your Current address:</b></p>
+                <p>123 Whatever Street
+                    <br> Whatever City, KY 233420
+                </p>
+                <p class="zero-margin small-label">Not your current address?</p>
+                <a href="#" class="zero-margin small-label"><u>Update</u></a>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
